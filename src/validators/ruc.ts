@@ -1,21 +1,22 @@
-import { calculateRUCDigit } from "../ruc/calculateDigit";
+const VALID_PREFIXES = ["10", "20", "15", "17"];
 
-type RUCOptions = {
-  strict?: boolean;
+const isValidRUCFormat = (ruc: string): boolean => {
+  return /^\d{11}$/.test(ruc);
 };
 
-const VALID_PREFIXES = ["10", "15", "17", "20"];
+export const isValidRUC = (ruc: string): boolean => {
+  if (!isValidRUCFormat(ruc)) return false;
 
-export const isValidRUC = (ruc: string, options?: RUCOptions): boolean => {
-  if (!/^\d{11}$/.test(ruc)) return false;
+  if (!VALID_PREFIXES.includes(ruc.slice(0, 2))) return false;
 
-  const base = ruc.slice(0, 10);
-  const digit = Number(ruc[10]);
+  const factors = [5,4,3,2,7,6,5,4,3,2];
+  const digits = ruc.split("").map(Number);
 
-  const isValidDigit = calculateRUCDigit(base) === digit;
+  const sum = digits
+    .slice(0, 10)
+    .reduce((acc, num, i) => acc + num * factors[i], 0);
 
-  if (!options?.strict) return isValidDigit;
+  const checkDigit = (11 - (sum % 11)) % 10;
 
-  const prefix = ruc.slice(0, 2);
-  return isValidDigit && VALID_PREFIXES.includes(prefix);
+  return checkDigit === digits[10];
 };

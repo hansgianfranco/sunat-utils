@@ -15,7 +15,7 @@ We actively provide security updates for the following versions:
 
 We take the security of this project seriously. If you find a vulnerability, please do not open a public issue. Instead, follow these steps:
 
-1.  **Report:** Send an email to **your-email@example.com** with the subject "Security Vulnerability Report".
+1.  **Report:** Send an email to **hansgianfranco@users.noreply.github.com** with the subject "Security Vulnerability Report".
 2.  **Details:** Include a detailed description of the bug, steps to reproduce it, and the potential impact.
 3.  **Response:** We will acknowledge your report within 48 hours and provide a timeline for a fix.
 

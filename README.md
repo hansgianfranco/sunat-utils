@@ -1,9 +1,9 @@
 # sunat-utils
 
-![npm](https://img.shields.io/npm/v/sunat-utils)
-![downloads](https://img.shields.io/npm/dm/sunat-utils)
-![license](https://img.shields.io/npm/l/sunat-utils)
-![typescript](https://img.shields.io/badge/TypeScript-Ready-blue?logo=typescript)
+[![npm version](https://img.shields.io/npm/v/sunat-utils)](https://www.npmjs.com/package/sunat-utils)
+[![npm downloads](https://img.shields.io/npm/dt/sunat-utils)](https://www.npmjs.com/package/sunat-utils)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/sunat-utils)](https://bundlephobia.com/package/sunat-utils)
+![Security](https://img.shields.io/badge/security-policy-blue)
 
 Utilidades modernas para trabajar con datos de SUNAT en Perú usando JavaScript y TypeScript.
 
@@ -61,7 +61,7 @@ addIGV(100); // 118
 removeIGV(118); // 100
 
 getIGVBreakdown(118);
-// { base: 100, igv: 18, total: 118 }
+// { net: 100, igv: 18, total: 118 }
 
 // Detracciones
 calculateDetraction(1000, "transporte");
@@ -85,10 +85,10 @@ getDocumentName("01"); // "Factura"
 
 #### `isValidRUC`
 
-Valida un RUC peruano (módulo 11).
+Valida un RUC peruano usando módulo 11 y prefijos válidos.
 
 ```ts
-isValidRUC(ruc: string, options?: { strict?: boolean }): boolean
+isValidRUC(ruc: string): boolean
 ```
 
 #### `isValidDNI`
@@ -144,7 +144,7 @@ removeIGV(amount: number): number
 
 ```ts
 getIGVBreakdown(amount: number): {
-  base: number;
+  net: number;
   igv: number;
   total: number;
 }
@@ -185,12 +185,12 @@ normalizeDNI(input: string): string
 
 #### `DOCUMENT_TYPES`
 
-Catálogo de tipos de comprobantes.
+Catálogo de tipos de comprobantes SUNAT.
 
 #### `getDocumentName`
 
 ```ts
-getDocumentName(type: "01" | "03" | "07" | "08"): string
+getDocumentName(type: string): string
 ```
 
 ---
@@ -213,6 +213,12 @@ Este proyecto usa el runner nativo de Node.js (`node:test`).
 npm run build
 npm test
 ```
+
+---
+
+## 📜 Changelog
+
+Ver historial de cambios en [CHANGELOG.md](CHANGELOG.md)
 
 ---
 
