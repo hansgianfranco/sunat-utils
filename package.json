@@ -1,0 +1,92 @@
+{
+  "name": "sunat-utils",
+  "version": "1.1.0",
+  "description": "Utilidades para validar RUC, DNI y cálculos tributarios en Perú con TypeScript.",
+  "keywords": [
+    "sunat",
+    "ruc",
+    "dni",
+    "peru",
+    "igv",
+    "tributos",
+    "facturacion",
+    "finanzas",
+    "typescript",
+    "javascript",
+    "utils",
+    "fns"
+  ],
+  "homepage": "https://github.com/hansgianfranco/sunat-utils",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hansgianfranco/sunat-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hansgianfranco/sunat-utils/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Franco Caballero",
+    "email": "hansgianfranco@users.noreply.github.com",
+    "url": "https://francocaballero.dev"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./validators": {
+      "types": "./dist/validators/index.d.ts",
+      "import": "./dist/validators/index.js"
+    },
+    "./ruc": {
+      "types": "./dist/ruc/index.d.ts",
+      "import": "./dist/ruc/index.js"
+    },
+    "./tax": {
+      "types": "./dist/tax/index.d.ts",
+      "import": "./dist/tax/index.js"
+    },
+    "./format": {
+      "types": "./dist/format/index.d.ts",
+      "import": "./dist/format/index.js"
+    },
+    "./normalize": {
+      "types": "./dist/normalize/index.d.ts",
+      "import": "./dist/normalize/index.js"
+    },
+    "./constants": {
+      "types": "./dist/constants/index.d.ts",
+      "import": "./dist/constants/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --minify",
+    "dev": "tsc --watch",
+    "test": "node --test",
+    "test:watch": "node --test --watch",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.58.2",
+    "@typescript-eslint/parser": "^8.58.2",
+    "eslint": "^9.39.4",
+    "tsup": "^8.5.1",
+    "typescript": "^5.0.0"
+  }
+}
