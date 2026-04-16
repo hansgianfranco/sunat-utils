@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.1.0] - 2026-04-15
+## [1.2.0] - 2026-04-15
 
 ### Added
 - Nuevos tipos de documentos SUNAT (catálogo básico)
