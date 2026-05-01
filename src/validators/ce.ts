@@ -5,8 +5,6 @@ const isValidCEFormat = (ce: string): boolean => {
 export const isValidCE = (ce: string): boolean => {
   if (!isValidCEFormat(ce)) return false;
 
-  if (/^\d+$/.test(ce)) return false;
-
   if (/^[A-Za-z]+$/.test(ce)) return false;
 
   if (/^(.)\1+$/.test(ce)) return false;

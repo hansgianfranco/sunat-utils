@@ -39,8 +39,8 @@ test("valid CE", () => {
   assert.strictEqual(isValidCE("ABC123456"), true);
 });
 
-test("invalid CE only numbers", () => {
-  assert.strictEqual(isValidCE("123456789"), false);
+test("valid CE only numbers", () => {
+  assert.strictEqual(isValidCE("123456789"), true);
 });
 
 test("invalid CE only letters", () => {

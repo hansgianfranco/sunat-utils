@@ -5,10 +5,18 @@ export { isValidCE } from "./validators/ce";
 export { calculateRUCDigit } from "./ruc/calculateDigit";
 export { getRUCType } from "./ruc/getType";
 
-export { addIGV, removeIGV, getIGVBreakdown } from "./tax/igv";
+export { 
+  addIGV, 
+  removeIGV, 
+  getIGVBreakdown,
+  calculateIGVRate,
+  splitIGV,
+  netToGross,
+  grossToNet
+} from "./tax/igv";
 export { calculateDetraction } from "./tax/detraction";
 
-export { formatCurrency } from "./format/currency";
+export { formatCurrency, formatInvoiceNumber } from "./format/currency";
 
 export { normalizeRUC, normalizeDNI } from "./normalize";
 

@@ -1,6 +1,6 @@
 {
   "name": "sunat-utils",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Utilidades para validar RUC, DNI y cálculos tributarios en Perú con TypeScript.",
   "keywords": [
     "sunat",
